@@ -53,7 +53,8 @@ int main () {
     int lineCount = 0; // Number of lines in the text file
 
     while (getline(std::cin, input)) {
-        if (input[0] == '>') { lineCount++; }
+        // if (input[0] == '>') { lineCount++; } // This version of line counting was for the example tests from the given .txt file.
+        lineCount++; // This is a more accurate line counter for .txt files without the ">" delimiter starting each line.
         totalWordCount += countWords(input);
         totalCharCount += countChars(input);
     }
