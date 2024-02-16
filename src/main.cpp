@@ -1,13 +1,14 @@
 #include <iostream>
 #include <vector>
 
-int main (int argc, char* argv[]) {
+int main () {
     // std::vector<std::string> files;
     std::string input;
 
-    getline(std::cin, input);
-
-    std::cout << input << std::endl;
+    while (std::cin) {
+        getline(std::cin, input);
+        std::cout << input << std::endl;
+    }
     
     return 0;
 }
