@@ -18,32 +18,27 @@ std::string wordCleaner(std::string word) {
     return cleanWord;
 }
 
-// Function to count chars in each line using stringstream.
-int countChars(std::string input) {
+// Function to return both word count and char count by returning of a pointer to static array.
+int * countWordsAndChars(std::string input) {
+    static int wordAndCharCount[2] = {0, 0};
+    
+    int lineWordCount = 0;
+    int charCount = 0;
+
     std::stringstream inputSS(input);
     std::string word;
-    int charCount = 0;
 
     while (inputSS >> word) {
         std::string cleanWord = wordCleaner(word);
         charCount += cleanWord.length();
-    }
-    
-    return charCount;
-}
-
-// Function to count words in each line using stringstream.
-int countWords(std::string input) {
-    std::stringstream inputSS(input);
-    std::string word;
-    int lineWordCount = 0;
-
-    while (inputSS >> word) {
-        std::string cleanWord = wordCleaner(word);
         if (!cleanWord.empty()) { lineWordCount++; }
     }
 
-    return lineWordCount;
+    wordAndCharCount[0] = lineWordCount;
+    wordAndCharCount[1] = charCount;
+
+    return wordAndCharCount;
+
 }
 
 int main () {
@@ -52,11 +47,14 @@ int main () {
     int totalWordCount = 0; // Total number of words in the text file
     int lineCount = 0; // Number of lines in the text file
 
+    int *wordAndCharCount;
+
     while (getline(std::cin, input)) {
         // if (input[0] == '>') { lineCount++; } // This version of line counting was for the example tests from the given .txt file.
         lineCount++; // This is a more accurate line counter for .txt files without the ">" delimiter starting each line.
-        totalWordCount += countWords(input);
-        totalCharCount += countChars(input);
+        wordAndCharCount = countWordsAndChars(input);
+        totalWordCount += *(wordAndCharCount+0);
+        totalCharCount += *(wordAndCharCount+1);
     }
 
     // Printing output to the console
