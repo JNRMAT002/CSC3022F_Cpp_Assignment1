@@ -1,0 +1,16 @@
+# CSC3022F Assignment 1:
+
+A word counter program similar to the Unix command "wc".
+To run this program from the command line, enter:
+
+**cat data/example.txt | ./bin/myWC**
+
+## Using the makefile:
+
+The makefile can be used to compile the program. Run **make** to compile all necessary files and generate the executable.
+Run **make run** to execute the program. To change the textfile being tested, copy your textfile into the /data folder and change the name of the textfile under the **run** target to the name of your textfile.
+
+E.g.:
+**@cat data/example.txt | ./bin/myWC** ---> **@cat data/newTextFile.txt | ./bin/myWC**
+
+Run the **make clean** command to clean the bin directory of any object files and executable files.
