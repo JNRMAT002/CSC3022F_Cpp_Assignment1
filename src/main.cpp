@@ -128,12 +128,16 @@ int main () {
         }
     }
 
-    for (int i = 0; i < charInformation.size(); i ++) {
-        std::cout << charInformation[i].character << ": " << charInformation[i].count << " | ";
-    }
-
     // Printing output to the console
-    std::cout << lineCount << " " << totalWordCount << " " << totalCharCount << std::endl;
+    std::cout << lineCount << " " << totalWordCount << " " << totalCharCount << " [";
+
+    for (int i = 0; i < charInformation.size(); i++) {
+        if (i == charInformation.size()-1) {
+            std::cout << charInformation[i].character << ":" << charInformation[i].count << "]" << std::endl;
+        } else {
+            std::cout << charInformation[i].character << ":" << charInformation[i].count << " " ;
+        }
+    }
     
     return 0;
 }
