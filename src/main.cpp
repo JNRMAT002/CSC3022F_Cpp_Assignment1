@@ -8,13 +8,29 @@ struct charInfo {
     long count;
 };
 
-// bool charInfoCharExists(std::string input) {
+bool charInfoCharExists(char inputChar, std::vector<charInfo> charInformation) {
+    if (charInformation.empty()) {
+        return false;
+    }
     
-// }
+    for (int i = 0; i < charInformation.size(); i++) {
+        if (charInformation[i].character == inputChar) {
+            return true;
+        }
+    }
 
-// int charInfoCharCount(std::string input) {
-    
-// }
+    return false;
+}
+
+int charInfoCharCount(char inputChar, std::vector<charInfo> charInformation) {
+    for (int i = 0; i < charInformation.size(); i++) {
+        if (charInformation[i].character == inputChar) {
+            return i;
+        }
+    }
+
+    return -1;
+}
 
 // ---------------------------------------------------------------------------------------------
 
@@ -70,9 +86,10 @@ int main () {
     int totalCharCount = 0; // Total number of character in the text file
     int totalWordCount = 0; // Total number of words in the text file
     int lineCount = 0; // Number of lines in the text file
-    // std::vector<charInfo> charInformation; // Container for charInfo struct variables
+    std::vector<charInfo> charInformation; // Container for charInfo struct variables
 
     int *wordAndCharCount;
+    int charIndex;
 
     while (getline(std::cin, input)) {
         // if (input[0] == '>') { lineCount++; } // This version of line counting was for the example tests from the given .txt file.
@@ -82,9 +99,37 @@ int main () {
         totalCharCount += *(wordAndCharCount+1);
 
         // Mastery work:
-        // for (int i = 0; i < input.length(); i++) {
+        for (int i = 0; i < input.length(); i++) {
+            char c;
+            c = tolower(input[i]);
 
-        // }
+            if ( isValidLetter(c) ) {
+                if (charInfoCharExists(c, charInformation)) {
+                    // charInfoCharCount(c, charInformation);
+                    charIndex = charInfoCharCount(c, charInformation);
+                    charInformation[charIndex].count++;
+                } else {
+                    charInfo newChar;
+                    newChar.character = c;
+                    newChar.count = 1;
+                    charInformation.push_back(newChar);
+                }
+            }
+        }
+    }
+
+    for (int i = 0; i < charInformation.size(); i++) {
+        for (int j = 0; j < charInformation.size(); j++) {
+            if (charInformation[i].character < charInformation[j].character) {
+                charInfo temp = charInformation[i];
+                charInformation[i] = charInformation[j];
+                charInformation[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < charInformation.size(); i ++) {
+        std::cout << charInformation[i].character << ": " << charInformation[i].count << " | ";
     }
 
     // Printing output to the console
