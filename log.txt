@@ -1,3 +1,21 @@
+commit 269fb9775a0c24b9fcc26720ceb78ec031695b8e
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:53:09 2024 +0200
+
+    Updated README according to assignment brief and moved log.txt out of /data directory.
+
+commit 56e1cc186cfc58ad4aa699ca0ae84417af98e081
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:44:45 2024 +0200
+
+    Removed binaries to comply with submission criteria.
+
+commit 507373e97fdf7576f8ccf9e38166307e92ba8f79
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:42:52 2024 +0200
+
+    Generated git log and sent output to log.txt.
+
 commit 7d64da2f19b87644617df1028e76897e32876477
 Author: JNRMAT002 <matthewjanuary@gmail.com>
 Date:   Mon Feb 19 16:41:23 2024 +0200
