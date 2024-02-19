@@ -1,0 +1,89 @@
+commit 7d64da2f19b87644617df1028e76897e32876477
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:41:23 2024 +0200
+
+    Added object files and executable files for completion sake.
+
+commit 71bec50d7024f88bf281f4af265fad6b1942cac8
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:39:16 2024 +0200
+
+    Added a detailed README.md to explain how to compile and run the program. Added assignment brief pdf as well.
+
+commit 7e8f344b91e037d53a43720832caacd4db33f9a4
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 16:20:09 2024 +0200
+
+    Created myWC.h to store function definitions. Created myWC.cpp to store function implementations. Moved all relevant code from main.cpp to myWC.cpp. Adjusted makefile for ease of compilation and execution.
+
+commit 1907feff0f161d7ee8702d6e4e1f9e766d39e813
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 15:56:22 2024 +0200
+
+    Removed old commented code and added comment explanations to existing code.
+
+commit 111a43feb8035f4b65766e700eab73f3a300ce35
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 15:51:13 2024 +0200
+
+    Removed unnecessary function and simplified checking in main() for mastery work.
+
+commit 0f5c94da01352c67df6f6b619d3d8cb0abf4e02e
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 15:30:09 2024 +0200
+
+    Modified print format to match the output format in the brief.
+
+commit 7eb539a00e056dc35079ac9d0059b4a04d24ec93
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 15:26:18 2024 +0200
+
+    Character instance counting has been implemented completely. Need to change printing format to match assignment brief.
+
+commit 5b025f5cc6e3abcd9936d58b6702ce175afa6d5b
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Mon Feb 19 14:33:54 2024 +0200
+
+    Added function isValidLetter to make code more readable and have better modularity.
+
+commit f4d3ec602e2043fcc00d7117e367bc4fc94cbb96
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Sat Feb 17 13:12:53 2024 +0200
+
+    Edited main.cpp to retain basic functionality of the code, but execute requirements in a neater way.
+
+commit 6de4fb973b041a7efa14e21580415b986aaac632
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Fri Feb 16 16:36:07 2024 +0200
+
+    Added two different lines for counting lines. One for counting lines delimited by ">" as in the examples, and one for normal .txt files without the delimiter.
+
+commit 9cf9a02d1c66dd80ab24a42a877217a8fdb69fcd
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Fri Feb 16 16:33:13 2024 +0200
+
+    Added complete basic program functionality, including functions for word count and letter count.
+
+commit df7b8f3fb58b8c5b24dbf4e5d225dcb25042f113
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Fri Feb 16 14:51:35 2024 +0200
+
+    Added some simple functionality to make use of std::cin to retrieve input from .txt file.
+
+commit 96e3bf2d8fe7123c0b82cbb94e34273407713176
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Thu Feb 15 15:44:16 2024 +0200
+
+    Created gitigore. Added some basic functionality to main.cpp. Inserted an example.txt file for later use. Added run, default target, and clean target to makefile.
+
+commit 66ad53c481e1486b88775645b682df8a07c0caa3
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Thu Feb 15 14:08:36 2024 +0200
+
+    Created main.cpp in src directory. No functionality.
+
+commit c8d5f793907bed3e176fa9e2361c514da07b645b
+Author: JNRMAT002 <matthewjanuary@gmail.com>
+Date:   Thu Feb 15 14:03:58 2024 +0200
+
+    First commit. Created makefile and src, bin, docs folders for later use.
