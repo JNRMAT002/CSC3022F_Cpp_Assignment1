@@ -8,21 +8,13 @@ struct charInfo {
     long count;
 };
 
-bool charInfoCharExists(char inputChar, std::vector<charInfo> charInformation) {
+// Returns -1 if character does not exist in vector<charInfo>.
+// Returns index otherwise.
+int getCharIndex(char inputChar, std::vector<charInfo> charInformation) {
     if (charInformation.empty()) {
-        return false;
-    }
-    
-    for (int i = 0; i < charInformation.size(); i++) {
-        if (charInformation[i].character == inputChar) {
-            return true;
-        }
+        return -1;
     }
 
-    return false;
-}
-
-int charInfoCharCount(char inputChar, std::vector<charInfo> charInformation) {
     for (int i = 0; i < charInformation.size(); i++) {
         if (charInformation[i].character == inputChar) {
             return i;
@@ -103,24 +95,26 @@ int main () {
             char c;
             c = tolower(input[i]);
 
-            if ( isValidLetter(c) ) {
-                if (charInfoCharExists(c, charInformation)) {
-                    // charInfoCharCount(c, charInformation);
-                    charIndex = charInfoCharCount(c, charInformation);
-                    charInformation[charIndex].count++;
-                } else {
-                    charInfo newChar;
-                    newChar.character = c;
-                    newChar.count = 1;
-                    charInformation.push_back(newChar);
-                }
+            if (!isValidLetter(c)) { continue; }
+
+            charIndex = getCharIndex(c, charInformation);
+
+            if (charIndex == -1){
+                charInfo newChar;
+                newChar.character = c;
+                newChar.count = 1;
+                charInformation.push_back(newChar);
+            } else {
+                charIndex = getCharIndex(c, charInformation);
+                charInformation[charIndex].count++;
             }
         }
     }
 
+    // Sort the vector<charInfo> alphabetically (Bubble Sort)
     for (int i = 0; i < charInformation.size(); i++) {
-        for (int j = 0; j < charInformation.size(); j++) {
-            if (charInformation[i].character < charInformation[j].character) {
+        for (int j = i+1; j < charInformation.size(); j++) {
+            if (charInformation[j].character < charInformation[i].character) {
                 charInfo temp = charInformation[i];
                 charInformation[i] = charInformation[j];
                 charInformation[j] = temp;
