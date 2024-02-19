@@ -26,6 +26,7 @@ int getCharIndex(char inputChar, std::vector<charInfo> charInformation) {
 
 // ---------------------------------------------------------------------------------------------
 
+// Function to return false if inputChar is not in 'A..Z', 'a..z', or '0..9'
 bool isValidLetter(char inputChar) {
      // If statement checks if valid letter = False.
     if ( (inputChar < 'A' || inputChar > 'Z') && (inputChar < 'a' || inputChar > 'z') && (inputChar < '0' || inputChar > '9') ) {
@@ -40,12 +41,9 @@ std::string wordCleaner(std::string word) {
     std::string cleanWord;
         for (int i = 0; i < word.length(); i++) {
             if ( isValidLetter(word[i]) ) {
-                // std::cout << word[i] << " ";
                 cleanWord += word[i];
             }
         }
-    
-    // std::cout << cleanWord;
 
     return cleanWord;
 }
@@ -53,10 +51,8 @@ std::string wordCleaner(std::string word) {
 // Function to return both word count and char count by returning of a pointer to static array.
 int * countWordsAndChars(std::string input) {
     static int wordAndCharCount[2] = {0, 0};
-    
     int lineWordCount = 0;
     int charCount = 0;
-
     std::stringstream inputSS(input);
     std::string word;
 
@@ -65,12 +61,10 @@ int * countWordsAndChars(std::string input) {
         charCount += cleanWord.length();
         if (!cleanWord.empty()) { lineWordCount++; }
     }
-
     wordAndCharCount[0] = lineWordCount;
     wordAndCharCount[1] = charCount;
 
     return wordAndCharCount;
-
 }
 
 int main () {
@@ -79,7 +73,6 @@ int main () {
     int totalWordCount = 0; // Total number of words in the text file
     int lineCount = 0; // Number of lines in the text file
     std::vector<charInfo> charInformation; // Container for charInfo struct variables
-
     int *wordAndCharCount;
     int charIndex;
 
