@@ -2,18 +2,42 @@
 #include <vector>
 #include <sstream>
 
+// Mastery work:
+struct charInfo {
+    char character;
+    long count;
+};
+
+// bool charInfoCharExists(std::string input) {
+    
+// }
+
+// int charInfoCharCount(std::string input) {
+    
+// }
+
+// ---------------------------------------------------------------------------------------------
+
+bool isValidLetter(char inputChar) {
+     // If statement checks if valid letter = False.
+    if ( (inputChar < 'A' || inputChar > 'Z') && (inputChar < 'a' || inputChar > 'z') && (inputChar < '0' || inputChar > '9') ) {
+        return false;
+    }
+    
+    return true;
+}
+
 // Function to remove punctuation and other non-letters and non-digits using stringstream.
 std::string wordCleaner(std::string word) {
     std::string cleanWord;
-    for (int i = 0; i < word.length(); i++) {
-        // If statement check if valid letter = False.
-        if ( (word[i] < 'A' || word[i] > 'Z') && (word[i] < 'a' || word[i] > 'z') && (word[i] < '0' || word[i] > '9') ) {
-            // std::cout << word[i] << " ";
-            continue;
+        for (int i = 0; i < word.length(); i++) {
+            if ( isValidLetter(word[i]) ) {
+                // std::cout << word[i] << " ";
+                cleanWord += word[i];
+            }
         }
-        
-        cleanWord += word[i];
-    }
+    
+    // std::cout << cleanWord;
 
     return cleanWord;
 }
@@ -46,6 +70,7 @@ int main () {
     int totalCharCount = 0; // Total number of character in the text file
     int totalWordCount = 0; // Total number of words in the text file
     int lineCount = 0; // Number of lines in the text file
+    // std::vector<charInfo> charInformation; // Container for charInfo struct variables
 
     int *wordAndCharCount;
 
@@ -55,6 +80,11 @@ int main () {
         wordAndCharCount = countWordsAndChars(input);
         totalWordCount += *(wordAndCharCount+0);
         totalCharCount += *(wordAndCharCount+1);
+
+        // Mastery work:
+        // for (int i = 0; i < input.length(); i++) {
+
+        // }
     }
 
     // Printing output to the console
