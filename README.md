@@ -14,3 +14,6 @@ E.g.:
 **@cat data/example.txt | ./bin/myWC** ---> **@cat data/newTextFile.txt | ./bin/myWC**
 
 Run the **make clean** command to clean the bin directory of any object files and executable files.
+
+## myWC.h and myWC.cpp
+These files are the header file containing the function definitions and the implementation file containing the function implementations respectively. The processing done in **myWC.cpp** includes checking if a character is a valid character or not, processing character count and word count in the textfile, and retrieving the index of the container holding variables of type charInfo for the mastery work.
