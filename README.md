@@ -5,6 +5,8 @@ To run this program from the command line, enter:
 
 **cat data/example.txt | ./bin/myWC**
 
+To properly process example textfiles with a **">"** character starting each line of valid input text (such as in the examples supplied in the assignment tab), comment out line 19 of **main.cpp** and uncomment line 18.
+
 ## Using the makefile:
 
 The makefile can be used to compile the program. Run **make** to compile all necessary files and generate the executable.
